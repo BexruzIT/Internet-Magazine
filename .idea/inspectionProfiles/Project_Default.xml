@@ -1,0 +1,38 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="false" level="WARNING" enabled_by_default="false">
+      <option name="ignoredPackages">
+        <value>
+          <list size="0" />
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyTypeCheckerInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="utils.db_api.db.UsersFunctionality.get_all_users" />
+          <option value="handlers.users.subscribe.types" />
+          <option value="handlers.users.start.chat_id" />
+          <option value="aiogram.types.message.Message.chat_id" />
+          <option value="handlers.users.subscribe.show_subscribers" />
+          <option value="utils.db_api.db.UsersFunctionality.get_followers" />
+          <option value="utils.db_api.db.self" />
+          <option value="utils.db_api.db.query" />
+          <option value="handlers.users.translate_money.YOUR_EXCHANGE_RATE" />
+          <option value="handlers.users.translate_money.FSMContext" />
+          <option value="handlers.users.translate_money.YourStateEnum" />
+          <option value="states.TranslationState" />
+          <option value="utils.db_api.db.chat_id" />
+          <option value="handlers.users.start.datas" />
+          <option value="states.register" />
+          <option value="telegram.ext._updater.Updater.*" />
+          <option value="handlers.users.start.*" />
+          <option value="utils.db_api.db.QuestionCategory.*" />
+          <option value="aiogram.utils.*" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
