@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
-import os
+from os import getenv, path
 from pathlib import Path
 from dotenv import load_dotenv
 
@@ -22,12 +22,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv("SECRET_KEY")
+SECRET_KEY = getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG')
+DEBUG = getenv('DEBUG')
 
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS").split(',')
+ALLOWED_HOSTS = getenv("ALLOWED_HOSTS").split(',')
 
 # Application definition
 
@@ -80,15 +80,25 @@ WSGI_APPLICATION = 'backend.ecommerce.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': getenv('POSTGRES_DB'),
+#         'USER': getenv('POSTGRES_USER'),
+#         'PASSWORD': getenv('POSTGRES_PASSWORD'),
+#         'HOST': getenv('POSTGRES_HOST'),
+#         'PORT': getenv('POSTGRES_PORT'),
+#     }
+# }
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('POSTGRES_DB'),
-        'USER': os.getenv('POSTGRES_USER'),
-        'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
-        'HOST': os.getenv('POSTGRES_HOST'),
-        'PORT': os.getenv('POSTGRES_PORT'),
-
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': getenv('MYSQL_DB'),
+        'USER': getenv('MYSQL_USER'),
+        'PASSWORD': getenv('MYSQL_PASSWORD'),
+        'HOST': getenv('MYSQL_HOST')
     }
 }
 
@@ -125,10 +135,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR / 'static')
+STATIC_ROOT = path.join(BASE_DIR / 'static')
 
 MEDIA_URL = 'media/'
-MEDIA_ROOT = os.path.join(BASE_DIR / 'media')
+MEDIA_ROOT = path.join(BASE_DIR / 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field

@@ -200,9 +200,9 @@ async def confirm_purchase_handler(call: CallbackQuery, callback_data: BuyCallba
                 amount=total_price
             )
         ],
-        # photo_url=product['image'],  # https://images.uzum.uz/crskc8ji153t30undvm0/original.jpg',  # Agar rasm bo'lsa
-        # photo_width=512,
-        # photo_height=512,
+        photo_url=product['image'],  # https://images.uzum.uz/crskc8ji153t30undvm0/original.jpg',  # Agar rasm bo'lsa
+        photo_width=512,
+        photo_height=512,
         need_name=True,
         need_phone_number=True,
         need_email=True,
